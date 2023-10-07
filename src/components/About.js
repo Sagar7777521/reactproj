@@ -9,10 +9,7 @@ export default function About() {
   };
   const [bgColor, setBgColor] = useState(false);
   const [btnName, setBtnName] = useState(false);
-  // let myStyle = {
-  //     backgroundColor: bgColor ? "black" : "white",
-  //     color: bgColor ? "white" : "black"}
-  // }
+
   return (
     <div
       className="container"
@@ -163,7 +160,16 @@ export default function About() {
           {btnName ? "Disable Dark Mode" : "Enable Dark Mode"}
         </button>
       </div>
-      <br />
+
+      <label for="AcceptConditions" class="relative h-8 w-12 cursor-pointer">
+        <input type="checkbox" id="AcceptConditions" class="peer sr-only" />
+
+        <span class="absolute inset-0 m-auto h-2 rounded-full bg-gray-300"></span>
+
+        <span class="absolute inset-y-0 start-0 m-auto h-6 w-6 rounded-full bg-gray-500 transition-all peer-checked:start-6 peer-checked:[&_>_*]:scale-0">
+          <span class="absolute inset-0 m-auto h-4 w-4 rounded-full bg-gray-200 transition"></span>
+        </span>
+      </label>
     </div>
   );
 }
